@@ -8,7 +8,7 @@ import (
 )
 
 type Transfer struct {
-	Id          string
+	ID          string
 	Amount      int
 	Created     int
 	AvailableOn int `json:"available_on"`
@@ -32,9 +32,9 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer resp.Body.Close()
 
 	body, err := io.ReadAll(resp.Body)
+	resp.Body.Close()
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -45,7 +45,7 @@ func main() {
 		Object  string
 		Data    []Transfer
 		HasMore bool `json:"has_more"`
-		Url     string
+		URL     string
 	}
 
 	if err := json.Unmarshal(body, &data); err != nil {
@@ -57,5 +57,4 @@ func main() {
 	for _, transfer := range data.Data {
 		log.Printf("result: %v", transfer)
 	}
-
 }
