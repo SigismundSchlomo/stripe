@@ -1,0 +1,22 @@
+linters:
+  enable:
+    - bodyclose
+    - depguard
+    - dupl
+    - goconst
+    - gocritic
+    - gofmt
+    - goimports
+    - misspell
+    - nakedret
+    - prealloc
+    - revive
+    - unconvert
+    - whitespace
+linters-settings:
+  depguard:
+    rules:
+      main:
+        allow:
+          - $gostd
+          - github.com/inc4/go-template
