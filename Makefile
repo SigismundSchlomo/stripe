@@ -8,7 +8,7 @@ all: build
 
 # TODO Use this if cmd/main.go used
 build: $(SRC)
-	go build $(GOFLAGS) -o $(BINDIR)/example ./cmd
+	go build $(GOFLAGS) -o $(BINDIR)/stripe ./cmd
 
 # TODO Use this if cmd/<names> used
 #build: $(SRC)
