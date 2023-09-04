@@ -5,18 +5,13 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-
-	"github.com/inc4/go-template/pkg/api"
 )
 
+// Experiment to show how to use stripe API
+// TODO: Get some data about transfers using stripe
+// Use plaine stripe http api to get this info
+// Use testing key set
+
 func main() {
-	// Basic command-line flag parsing
-	port := flag.Int("port", 8080, "example message for port number")
-	exampleStr := flag.String("example", "foo", "help message")
-	flag.Parse()
 
-	fmt.Println("command-line:", *port, *exampleStr)
-
-	http.HandleFunc("/hello", api.HandleHello)
-	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", *port), nil))
 }
